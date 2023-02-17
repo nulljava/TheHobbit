@@ -20,13 +20,25 @@ public class ThereAndBackAgain
 		//                   Sam has traveled 50 miles.
 		//                   Gimli has traveled 50 miles.
 		
-		System.out.println();
+		Traveler[] party1 = {frodo, sam, gimli};
+		
+		for(int i = 0; i<party1.length; i++) {
+			party1[1].travel(50);
+			System.out.println(party1[i].getName() + " has traveled " + party1[i].getDistanceTraveled() + " miles.");
+			System.out.println();
+		}
 		
 		System.out.println("\n\n\nPART 2: \n");
 
 		String[] dwarfNames = {"Fili", "Kili", "Dori", "Ori", "Nori", "Balin", "Dwalin",
 		"Oin", "Gloin", "Bifur", "Bofur", "Bombur", "Thorin"};
-
+		
+		ArrayList<String> party2 = new ArrayList<>();
+		Hobbit bilbo = new Hobbit("Bilbo");
+		Wizard gandalf = new Wizard("Gandalf");
+		party2.add(bilbo);
+		party2.add(gandalf);
+		
 		// Make a new ArrayList to hold a 2nd party of Travelers called party2:
 		// Make a new Hobbit called "Bilbo" and add him to party2
 
