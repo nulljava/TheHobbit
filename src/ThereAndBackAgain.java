@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ThereAndBackAgain 
 {
@@ -28,14 +29,14 @@ public class ThereAndBackAgain
 			System.out.println();
 		}
 		
-		System.out.println("\n\n\nPART 2: \n");
+		System.out.println("PART 2: \n");
 
 		String[] dwarfNames = {"Fili", "Kili", "Dori", "Ori", "Nori", "Balin", "Dwalin",
 		"Oin", "Gloin", "Bifur", "Bofur", "Bombur", "Thorin"};
 		
-		ArrayList<String> party2 = new ArrayList<>();
+		ArrayList<Traveler> party2 = new ArrayList<>();
 		Hobbit bilbo = new Hobbit("Bilbo");
-		Wizard gandalf = new Wizard("Gandalf");
+		Wizard gandalf = new Wizard("Gandalf", "grey");
 		party2.add(bilbo);
 		party2.add(gandalf);
 		
@@ -43,20 +44,44 @@ public class ThereAndBackAgain
 		// Make a new Hobbit called "Bilbo" and add him to party2
 
 		// Make a new Wizard called "Gandalf" and add him to party2.
-
-
+		
+		createParty(dwarfNames, party2);
 		//write createParty
-		// Call the createParty method and pass it party2 and the dwarfNames array.
+		// Call the createParty method and pass it, party2, and the dwarfNames array.
 
 		// create party should add all the new dwarves to party2,
-
+		
+		for (int i = 0; i<party2.size()-1; i++) {
+			System.out.print(party2.get(i).getName() + ", ");
+		}
+		
+		System.out.println();
+		
+		allTravel(party2, 100);
 		//Write allTravel
 		// Finally, call the allTravel method passing it party2 and 100 (representing
 		// the 100 miles that party2 has traveled together.
-
+		
 		//Make sure your code prints out the name and distances party2 has traveled.
-
+		
+		for (int i = 0; i<
+				party2.size()-1; i++) {
+			System.out.print(party2.get(i).getDistanceTraveled() + ", ");
+		}
+		
 	}
-
+	
+	public static void createParty(String[] extName, ArrayList<Traveler> liName){
+		for(int i = 0; i<extName.length-1; i++) {
+			Dwarf newDwarf = new Dwarf(extName[i]);
+			liName.add(newDwarf);
+		}
+	}
+	
+	public static void allTravel(ArrayList<Traveler> liName, int miles) {
+		for(int i = 0; i<liName.size()-1; i++) {
+			liName.get(i).travel(miles);
+		}
+	}
 	
 }
