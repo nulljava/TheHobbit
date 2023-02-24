@@ -51,10 +51,6 @@ public class ThereAndBackAgain
 
 		// create party should add all the new dwarves to party2,
 		
-		for (int i = 0; i<party2.size()-1; i++) {
-			System.out.print(party2.get(i).getName() + ", ");
-		}
-		
 		System.out.println();
 		
 		allTravel(party2, 100);
@@ -64,9 +60,8 @@ public class ThereAndBackAgain
 		
 		//Make sure your code prints out the name and distances party2 has traveled.
 		
-		for (int i = 0; i<
-				party2.size()-1; i++) {
-			System.out.print(party2.get(i).getDistanceTraveled() + ", ");
+		for (int i = 0; i<party2.size()-1; i++) {
+			System.out.print(party2.get(i).getName() + " traveled " + party2.get(i).getDistanceTraveled() + " miles.");
 		}
 		
 	}
